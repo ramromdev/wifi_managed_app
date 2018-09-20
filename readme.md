@@ -1,4 +1,4 @@
-# Arduino NANO, sensor ultrasonidos y ESP8266 integrando un servidor para visualizar niveles
+# Arduino NANO, sensor ultrasonidos y ESP8266 integrando un servidor para visualizar distintos niveles de potencia
 
 
 ---
