@@ -5,33 +5,33 @@ envia un pulso de alarma por  el pin 13
  HC-SR04 conexiones:
   VCC al arduino 5v 
   GND al arduino GND
-  Echo al Arduino pin 6 
-  Trig al Arduino pin 7
+  Echo al Arduino pin 3 
+  Trig al Arduino pin 2
  */
 //ULTRASONIDOS 1 
 const int echo1 = 3;
 const int trig1 = 2;
 
 //ULTRASONIDOS 2
-const int echo2 = 8;
-const int trig2 = 7;
+//const int echo2 = 8;
+//const int trig2 = 7;
 
 char nivel='0';
 long duracion, distancia, duracion2, distancia2;
  
 void setup() {                
   Serial.begin (115200);       // inicializa el puerto seria a 115200 baudios
-  pinMode(echo1, INPUT);     // define el pin 6 como entrada (echo)
-  pinMode(trig1, OUTPUT);    // define el pin 5 como salida  (triger)
-  pinMode(echo2, INPUT);     // define el pin 8 como entrada (echo)
-  pinMode(trig2, OUTPUT);    // define el pin 7 como salida  (triger)   
+  pinMode(echo1, INPUT);     // define el pin 3 como entrada (echo)
+  pinMode(trig1, OUTPUT);    // define el pin 2 como salida  (triger)
+  //pinMode(echo2, INPUT);     // define el pin 8 como entrada (echo)
+  //pinMode(trig2, OUTPUT);    // define el pin 7 como salida  (triger)   
    
   }
   
 void loop() {
   
   
-  //los ultrasonidos estarán en la campana extractora. Supongo una distancia entre la campana y la vitro de 70cm.
+  
   //ultasonido1
   digitalWrite(trig1, LOW);
   delayMicroseconds(4);
@@ -42,7 +42,7 @@ void loop() {
   duracion = pulseIn(echo1, HIGH);
   distancia = (duracion/2) / 29;            // calcula la distancia en centimetros  
  
-  //GESTIÓN DE POTENCIA PARA EL ULTRASONIDOS 1
+  //GESTIÓN PARA EL ULTRASONIDOS 1
   if (distancia <= 70 && distancia >= 50){
          nivel='1';
          Serial.write(nivel);
