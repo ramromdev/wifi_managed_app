@@ -58,26 +58,5 @@ void loop() {
    else{
     Serial.write(nivel);                                      
    }
-   /*
- //ultrasonido2
-  digitalWrite(trig2, LOW);
-  delayMicroseconds(4);
-  digitalWrite(trig2, HIGH);   // genera el pulso de triger por 10ms
-  delayMicroseconds(10);
-  digitalWrite(trig2, LOW);
-  
-  duracion2 = pulseIn(echo2, HIGH);
-  distancia2 = (duracion2/2) / 29;            // calcula la distancia en centimetros
-  
-  //GESTIÓN DE POTENCIA PARA EL ULTRASONIDOS 2
-    if (distancia2 <= 70 && distancia2 >= 50){
-           Serial.println("nivel1_fuego2");
-      }                    
-    if (distancia2 <= 49 && distancia2 >= 30){
-           Serial.println("nivel2_fuego2");
-      }  
-    if (distancia2 <= 29 && distancia2 >= 10){
-           Serial.println("nivel3_fuego2");
-      } 
-    */                       
+                 
 }
